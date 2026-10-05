@@ -51,12 +51,12 @@ int Str_compare(const char string1[], const char string2[]){
     } else if(string1[i] != '\0' && string2[i] == '\0'){
         return 1;
     }
-    
+
     return 0; 
 }
 
 char* Str_search(const char string[], const char substring[]){
-    size_t i= 0;
+    size_t i = 0;
     
     assert(string != NULL);
     assert(substring != NULL);
@@ -64,9 +64,8 @@ char* Str_search(const char string[], const char substring[]){
     while(string[i] != '\0'){
         if(Str_compare(string + i, substring) == 0){
             return (char*)(string + i);
-            i++;
         }
-    
+        i++;
     }
     return NULL;
 }
