@@ -66,6 +66,10 @@ char* Str_search(const char string[], const char substring[]){
         return (char*)string;
     }
 
+    if(sub_len > Str_getLength(string)){
+        return NULL;
+    }
+
     while(string[i + sub_len - 1] != '\0'){
         if(Str_compare(string + i, substring) == 0){
             return (char*)(string + i);
