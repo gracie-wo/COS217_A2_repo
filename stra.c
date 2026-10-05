@@ -59,7 +59,7 @@ char* Str_search(const char string[], const char substring[]){
     size_t i = 0;
     size_t sub_len = Str_getLength(substring);
     size_t str_len = Str_getLength(string);
-    char substring[sub_len + 1];
+    const char sub_of_string[sub_len + 1];
     
     assert(string != NULL);
     assert(substring != NULL);
@@ -73,8 +73,8 @@ char* Str_search(const char string[], const char substring[]){
     }
 
     while(string[i + sub_len - 1] != '\0'){
-        subString(substring, string, i, sub_len);
-        if(Str_compare(substring, substring) == 0){
+        subString(sub_of_string, string, i, sub_len);
+        if(Str_compare(sub_of_string, substring) == 0){
             return (char*)(string + i);
         }
         i++;
