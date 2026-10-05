@@ -9,10 +9,12 @@ size_t Str_getLength(const char pcSrc[]){
    return uLength;
 }
 
-char* Str_copy(const char source[], char destination[]){
+char* Str_copy(char destination[], const char source[]){
+    size_t i = 0;
+
     assert(source != NULL);
     assert(destination != NULL);
-    size_t i = 0;
+
     while (source[i] != '\0') {
         destination[i] = source[i];
         i++;
@@ -21,19 +23,20 @@ char* Str_copy(const char source[], char destination[]){
     return destination;
 }
 
-char* Str_concat(const char source[], char destination[]){
+char* Str_concat(char destination[], const char source[]){
     assert(source != NULL);
     assert(destination != NULL);
 
-    Str_copy(source, destination + Str_getLength(destination));
+    Str_copy(destination + Str_getLength(destination), source);
     return destination;
 }
 
 int Str_compare(const char string1[], const char string2[]){
+    size_t i = 0;
+
     assert(string1 != NULL);
     assert(string2 != NULL);
     
-    size_t i = 0;
     while (string1[i] != '\0' && string2[i] != '\0'){
         if(string1[i] < string2[i]){
             return -1;
@@ -45,10 +48,10 @@ int Str_compare(const char string1[], const char string2[]){
 }
 
 char* Str_search(const char string[], const char substring[]){
+    size_t i= 0;
+    
     assert(string != NULL);
     assert(substring != NULL);
-
-    size_t i= 0;
 
     while(string[i] != '\0'){
         if(Str_compare(string + i, substring) == 0){

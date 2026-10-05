@@ -1,16 +1,17 @@
 #ifndef STR_H
 #define STR_H
+#include <stddef.h>
 
 /*returns the length of the string*/
 size_t Str_getLength(const char *string);
 
 /*copies the source string to the destination string*/
-char* Str_copy(const char *source, char *destination);
+char* Str_copy(char *destination, const char *source);
 
 /*appends a copy of the source string to the end of the destination string
 the destination string must be large enough to hold the result
 returns a pointer to the destination string*/
-char* Str_concat(const char *source, char *destination);
+char* Str_concat(char *destination, const char *source);
 
 /*compares two strings and returns 0 if they are equal
 returns a negative value if the first non-matching char in string1 has a lower ASCII value than the corresponding char in string2
