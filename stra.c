@@ -57,11 +57,12 @@ int Str_compare(const char string1[], const char string2[]){
 
 char* Str_search(const char string[], const char substring[]){
     size_t i = 0;
+    size_t sub_len = Str_getLength(substring);
     
     assert(string != NULL);
     assert(substring != NULL);
 
-    while(string[i] != '\0'){
+    while(string[i + sub_len - 1] != '\0'){
         if(Str_compare(string + i, substring) == 0){
             return (char*)(string + i);
         }
