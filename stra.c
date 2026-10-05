@@ -65,6 +65,7 @@ char* Str_search(const char string[], const char substring[]){
     while(string[i] != '\0'){
         if(Str_compare(string + i, substring) == 0){
             return (char*)(string + i);
+            i++;
         }
     
     }
