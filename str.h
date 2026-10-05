@@ -1,6 +1,7 @@
 #ifndef STR_H
 #define STR_H
 #include <stddef.h>
+#include <assert.h>
 
 /*returns the length of the string*/
 size_t Str_getLength(const char *string);
