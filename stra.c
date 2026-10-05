@@ -33,9 +33,17 @@ char* Str_concat(char destination[], const char source[]){
 
 int Str_compare(const char string1[], const char string2[]){
     size_t i = 0;
+    size_t len1 = Str_getLength(string1);
+    size_t len2 = Str_getLength(string2);
 
     assert(string1 != NULL);
     assert(string2 != NULL);
+
+    if(len1 < len2){
+        return -1; 
+    } else if(len1 > len2){
+        return 1; 
+    }
     
     while (string1[i] != '\0' && string2[i] != '\0'){
         if(string1[i] < string2[i]){
