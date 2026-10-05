@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "str.h"
 
+/*gets a string and returns the length of the string*/
 size_t Str_getLength(const char pcSrc[]){
    size_t uLength = 0;
    assert(pcSrc != NULL);
@@ -9,6 +10,7 @@ size_t Str_getLength(const char pcSrc[]){
    return uLength;
 }
 
+/*copies a string from a source to a destination and returns a pointer to the destination*/
 char* Str_copy(char destination[], const char source[]){
     size_t i = 0;
 
@@ -23,6 +25,7 @@ char* Str_copy(char destination[], const char source[]){
     return destination;
 }
 
+/*concatenates a string from a source to a destination and returns a pointer to the destination*/
 char* Str_concat(char destination[], const char source[]){
     assert(source != NULL);
     assert(destination != NULL);
@@ -31,6 +34,7 @@ char* Str_concat(char destination[], const char source[]){
     return destination;
 }
 
+/*compares two strings, returns -1 if string1 < string2, 0 if equal, 1 if string1 > string2*/
 int Str_compare(const char string1[], const char string2[]){
     size_t i = 0;
 
@@ -55,6 +59,7 @@ int Str_compare(const char string1[], const char string2[]){
     return 0; 
 }
 
+/*searches for a substring within a string and returns a pointer to the first occurrence within the string*/
 char* Str_search(const char string[], const char substring[]){
     size_t i = 0;
     size_t matching_char = 0;
