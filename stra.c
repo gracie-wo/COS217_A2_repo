@@ -59,7 +59,7 @@ char* Str_search(const char string[], const char substring[]){
     size_t i = 0;
     size_t sub_len = Str_getLength(substring);
     size_t str_len = Str_getLength(string);
-    char copy_sub[sub_len + 1];
+    char substring[sub_len + 1];
     
     assert(string != NULL);
     assert(substring != NULL);
@@ -68,17 +68,29 @@ char* Str_search(const char string[], const char substring[]){
         return (char*)string;
     }
 
-    if(str_len == 0){
+    if(str_len == 0 || sub_len > str_len){
         return NULL;
     }
 
     while(string[i + sub_len - 1] != '\0'){
-        str_copy(copy_sub, string);
-
-        if(Str_compare(copy_sub, substring) == 0){
+        subString(substring, string, i, sub_len);
+        if(Str_compare(substring, substring) == 0){
             return (char*)(string + i);
         }
         i++;
     }
     return NULL;
+}
+
+static void subString(char destination[], const char source[], size_t start, size_t length){
+    size_t i = 0;
+
+    assert(source != NULL);
+    assert(destination != NULL);
+
+    while (i < length && source[start + i] != '\0') {
+        destination[i] = source[start + i];
+        i++;
+    }
+    destination[i] = '\0';
 }
