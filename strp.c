@@ -37,7 +37,11 @@ char* Str_concat(char *destination, const char *source){
     assert(source != NULL);
     assert(destination != NULL);
 
-    (void)Str_copy(destination + Str_getLength(destination), source);
+    while (*destination != '\0') {
+        destination++;
+    }
+
+    (void)Str_copy(destination, source);
     return destination;
 }
 

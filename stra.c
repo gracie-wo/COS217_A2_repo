@@ -32,10 +32,15 @@ char* Str_copy(char destination[], const char source[]){
 
 /*concatenates a string from a source to a destination and returns a pointer to the destination*/
 char* Str_concat(char destination[], const char source[]){
+    size_t i = 0;
     assert(source != NULL);
     assert(destination != NULL);
 
-    (void)Str_copy(destination + Str_getLength(destination), source);
+    while (destination[i] != '\0') {
+        i++;
+    }
+
+    (void)Str_copy(&destination[i], source);
     return destination;
 }
 
