@@ -16,8 +16,6 @@ size_t Str_getLength(const char *string){
 }
 
 char* Str_copy(char *destination, const char *source){
-    size_t i = 0;
-
     assert(source != NULL);
     assert(destination != NULL);
 
@@ -62,7 +60,6 @@ int Str_compare(const char *string1, const char *string2){
 }
 
 char* Str_search(const char *string, const char *substring){
-    size_t i = 0;
     size_t matching_char = 0;
     size_t sub_len = Str_getLength(substring);
     size_t str_len = Str_getLength(string);
