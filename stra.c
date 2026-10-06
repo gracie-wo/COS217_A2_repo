@@ -82,7 +82,7 @@ char* Str_search(const char string[], const char substring[]){
         return NULL;
     }
 
-    /*iterate through the string and check for the substring. 
+    /*iterate through the string and check for the substring 
     if found return a pointer to the first occurrence of the substring within the string*/
     while(string[i] != '\0'){
         if(string[i] == substring[0]){
