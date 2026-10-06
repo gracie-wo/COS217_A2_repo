@@ -16,7 +16,7 @@ size_t Str_getLength(const char *string){
 }
 
 char* Str_copy(char *destination, const char *source){
-    const char *strStart;
+    char *strStart;
     assert(source != NULL);
     assert(destination != NULL);
 
