@@ -38,7 +38,7 @@ static size_t replaceAndWrite(const char *pcLine,
 
    while ((current_char = Str_search(pcLine, pcFrom)) != NULL){
       num_char = (size_t)(current_char - pcLine);
-      fwrite(pcLine, sizeof(char), num_char, stdout);
+      (void)fwrite(pcLine, sizeof(char), num_char, stdout);
       printf("%s", pcTo);
       count++;
       pcLine = current_char + from_len;
