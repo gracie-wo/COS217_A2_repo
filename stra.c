@@ -36,6 +36,8 @@ char* Str_concat(char destination[], const char source[]){
     assert(source != NULL);
     assert(destination != NULL);
 
+    putchar(sizeof(destination));
+
     while (destination[i] != '\0') {
         i++;
     }
