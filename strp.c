@@ -16,16 +16,18 @@ size_t Str_getLength(const char *string){
 }
 
 char* Str_copy(char *destination, const char *source){
+    const char *strStart;
     assert(source != NULL);
     assert(destination != NULL);
 
+    strStart = destination;
     while (*source != '\0') {
         *destination = *source;
         destination++;
         source++;
     }
     *destination = '\0';
-    return destination;
+    return strStart;
 }
 
 char* Str_concat(char *destination, const char *source){
