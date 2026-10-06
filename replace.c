@@ -40,7 +40,6 @@ static size_t replaceAndWrite(const char *pcLine,
       num_char = (size_t)(current_char - pcLine);
       fwrite(pcLine, sizeof(char), num_char, stdout);
       printf("%s", pcTo);
-      count++;
       pcLine = current_char + from_len;
    }
    printf("%s", pcLine);
