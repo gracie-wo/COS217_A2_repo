@@ -7,10 +7,10 @@
 #include "str.h"
 
 /*gets a string and returns the length of the string*/
-size_t Str_getLength(const char pcSrc[]){
+size_t Str_getLength(const char string[]){
    size_t uLength = 0;
-   assert(pcSrc != NULL);
-   while (pcSrc[uLength] != '\0')
+   assert(string != NULL);
+   while (string[uLength] != '\0')
       uLength++;
    return uLength;
 }
@@ -82,6 +82,8 @@ char* Str_search(const char string[], const char substring[]){
         return NULL;
     }
 
+    /*iterate through the string and check for the substring. 
+    if found return a pointer to the first occurrence of the substring within the string*/
     while(string[i] != '\0'){
         if(string[i] == substring[0]){
             while(matching_char < sub_len && string[i + matching_char] == substring[matching_char]){

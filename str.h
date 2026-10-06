@@ -1,3 +1,8 @@
+/*--------------------------------------------------------------------*/
+/* str.h                                                             */
+/* Author: Grace Hua                                                  */
+/*--------------------------------------------------------------------*/
+
 #ifndef STR_H
 #define STR_H
 #include <stddef.h>
@@ -6,7 +11,7 @@
 /*returns the length of the string*/
 size_t Str_getLength(const char *string);
 
-/*copies the source string to the destination string*/
+/*copies the source string to the destination string and returns a pointer to the destination*/
 char* Str_copy(char *destination, const char *source);
 
 /*appends a copy of the source string to the end of the destination string
