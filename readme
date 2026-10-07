@@ -111,6 +111,6 @@ Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+No, it would not be possible. The argument passed into both functions is only a pointer to the first memory address of the first char of the destination array. A pointer cannot check how many bytes were allocated to the full array as it holds no infor about that. It only holds the memory address of the first value of the destination array. Asserting anything on the destination or the source array would mean only acting on the first value of the array. For example, assert(source != NULL) is checking whether the first memory address of the first char of the array is NULL or not. Because we can only enact functions on the pointer, doing functions such as sizeof(destination) also would not work to verify the destination memory area size. Doing sizeof(destination) would only return the size of the pointer (8 bytes), not the size of the memory area allocated. Because we are only passing a pointer to the first char of the arrays (destination and source), Str_copy and Str_concat cannot call assert to verify that the destination memory area specified by the caller is large enough. 
 
 ------------------------------------------------------------------------
