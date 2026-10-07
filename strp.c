@@ -38,7 +38,7 @@ char* Str_concat(char *destination, const char *source){
     assert(source != NULL);
     assert(destination != NULL);
 
-    *strStart = *destination;
+    strStart = destination;
 
     while (*destination != '\0') {
         destination++;
