@@ -34,15 +34,18 @@ char* Str_copy(char *destination, const char *source){
 
 /*concatenates a string from a source to a destination and returns a pointer to the destination*/
 char* Str_concat(char *destination, const char *source){
+    char *strStart;
     assert(source != NULL);
     assert(destination != NULL);
+
+    *strStart = *destination;
 
     while (*destination != '\0') {
         destination++;
     }
 
     (void)Str_copy(destination, source);
-    return destination;
+    return strStart;
 }
 
 /*compares two strings, returns -1 if string1 < string2, 0 if equal, 1 if string1 > string2*/
